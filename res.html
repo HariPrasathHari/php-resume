@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RESUME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width:device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wrapl");
+            var add_button = $(".add_field_buttonl");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><input type="text" name="mytextl[]"/><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wraps");
+            var add_button = $(".add_field_buttons");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><input type="text" name="mytexts[]"/><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wrap");
+            var add_button = $(".add_field_button");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><textarea row="2" cols="100" name="mytext[]"></textarea><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wrap1");
+            var add_button = $(".add_field_button1");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><textarea row="2" cols="100" name="mytext1[]"></textarea><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wrap2");
+            var add_button = $(".add_field_button2");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><textarea row="2" cols="100" name="mytext2[]"></textarea><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+        $(document).ready(function () {
+            var max_fields = 10;
+            var wrapper = $(".input_fields_wrap3");
+            var add_button = $(".add_field_button3");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><textarea row="2" cols="100" name="mytext3[]"></textarea><a href="#" class="remove_field">Remove</a></div><br/>');
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+
+
+        var counter = 1;
+        var limit = 10;
+
+        function addInput(divName) {
+            if (counter == limit) {
+                alert("You have reached the limit of adding " + counter + " inputs");
+            }
+            else {
+                var newdiv = document.createElement('div');
+                newdiv.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
+                document.getElementById(divName).appendChild(newdiv);
+                counter++;
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="container ">
+    <form class="form-control form-group well" method="post" action="res.php">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" required id="name" name="name" placeholder="name">
+            <span class="error">* <?php echo $nameErr;?></span>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address:</label>
+            <input type="email" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp"
+                   name="email" placeholder="Enter email">
+            <span class="error">* <?php echo $emailErr;?></span>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="collegename">College name:</label>
+            <input type="text" class="form-control" required id="collegename" name="cn" placeholder="collegename">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="phonenumber">Phone number:</label>
+            <input type="number" class="form-control" pattern="{10}" aria-required="true" required id="phonenumber"
+                   name="pn" placeholder="phonenumber">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="addr">Address:</label>
+            <textarea rows="4" cols="100" class="form-control" id="addr" name="addr"
+                      placeholder="permanant address"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="co">Carrer objective:</label>
+            <textarea rows="4" cols="100" class="form-control" id="co" placeholder="carrer objective"
+                      name="co"></textarea>
+        </div>
+        <br/>
+        <div class="form-group">
+            <fieldset>
+                <legend>Qualification</legend>
+                <div class='container'>
+                    <label for='tenthschool'>School/Institute name(10th):</label><br/>
+                    <input type='text' name='quali10s' id='tenthschool'/><br/>
+                </div>
+                <div class='container'>
+                    <label for='tenth'>10th Percentage:</label><br/>
+                    <input type='text' name='quali10' id='tenth'/><br/>
+                </div>
+                <div class='container'>
+                    <label for='twelthschool'>School/Institute name(12th):</label><br/>
+                    <input type='text' name='quali12s' id='twelthschool'/><br/>
+                </div>
+                <div class='container'>
+                    <label for='twelth'>12th Percentage:</label><br/>
+                    <input type='text' name='quali12' id='twelth'/><br/>
+                </div>
+                <div class='container'>
+                    <label for='clgname'>College Name:</label><br/>
+                    <input type='text' name='qualiclgn' id='clgname'/><br/>
+                </div>
+                <div class='container'>
+                    <label for='clg'>College Percentage(Current):</label><br/>
+                    <input type='text' name='qualiclg' id='clg'/><br/>
+                </div>
+            </fieldset>
+        </div>
+        <br/>
+        <div class="form-group">
+            <fieldset>
+                <legend>Field of interest:</legend>
+                <div class="form-group">
+                    <div id="dynamicInput">
+                        Entry 1<br><input type="text" name="myInputs[]">
+                    </div>
+                    <br/>
+                    <input type="button" class="btn btn-dark" value="Add another text input"
+                           onClick="addInput('dynamicInput');">
+                </div>
+            </fieldset>
+        </div>
+        <br/>
+        <div class="form-group">
+            <fieldset>
+                <legend>Languages Known:</legend>
+                <div class="input_fields_wrapl">
+                    <button class="btn btn-light add_field_buttonl">Add more languages</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <input type="text" pattern="[A-Za-z]+" title="Only letters are allowed"
+                               name="mytextl[]"></textarea>
+                        <br/><br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Technical skills:</legend>
+                <div class="input_fields_wraps">
+                    <button class="btn btn-light add_field_buttons">Add More Skills</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <input type="text" name="mytexts[]"/>
+                        <br/><br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        </br>
+        <div class="form-group">
+            <fieldset>
+                <legend>Achievements:</legend>
+                <div class="input_fields_wrap">
+                    <button class="btn btn-light add_field_button">Add More Achievements</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <textarea rows="2" cols="100" name="mytext[]"></textarea>
+                        <br/><br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        </br>
+        <div class="form-group">
+            <fieldset>
+                <legend>Extra-curicular activities:</legend>
+                <div class="input_fields_wrap1">
+                    <button class="btn btn-light add_field_button1">Add more Extra-curicular activities</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <textarea rows="2" cols="100" name="mytext1[]"></textarea>
+                        <br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        </br>
+        </br>
+        <div class="form-group">
+            <fieldset>
+                <legend>Co-curicular activities:</legend>
+                <div class="input_fields_wrap2">
+                    <button class="btn btn-light add_field_button2">Add more Co-curicular activities</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <textarea rows="2" cols="100" name="mytext2[]"></textarea>
+                        <br/><br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Projects done:</legend>
+                <div class="input_fields_wrap3">
+                    <button class=" btn btn-light add_field_button3">Add more Projects</button>
+                    <br/>
+                    <div>
+                        <br/>
+                        <textarea rows="2" cols="100" name="mytext3[]"></textarea>
+                        <br/><br/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        </br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
